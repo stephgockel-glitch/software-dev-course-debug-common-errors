@@ -1,18 +1,16 @@
 // Program B
-// ERROR TYPE: Runtime/data-type issue: array contained "eight" (a string),
-// which makes numbers[i] * 2 become NaN.
-// FIX 1 (simple): use all numbers.
+// ERROR TYPE: Runtime / Data-Type Error
+// Original code had ["eight"] as a string, which caused NaN when multiplied.
+// FIX: Replace "eight" with the number 8, or handle non-numeric values safely.
 
-let numbers = [2, 4, 8]; // "eight" -> 8
+let numbers = [2, 4, 8];  // ✅ corrected: use numbers only
 
 for (let i = 0; i < numbers.length; i++) {
   let doubled = numbers[i] * 2;
   console.log(doubled);
 }
 
-// Optional FIX 2 (robust): skip non-numbers
-// let numbers = [2, 4, "eight"];
-// for (let i = 0; i < numbers.length; i++) {
-//   if (typeof numbers[i] === "number") console.log(numbers[i] * 2);
-//   else console.log(`Skipped non-number: ${numbers[i]}`);
-// }
+// VERIFY OUTPUT:
+// 4
+// 8
+// 16

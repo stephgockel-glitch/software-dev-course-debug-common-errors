@@ -3,3 +3,4 @@
 // FIX: Close the string and statement, then run to verify.
 
 console.log("Welcome to the bootcamp"); // ✅ fixed
+
